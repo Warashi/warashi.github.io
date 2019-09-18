@@ -1,0 +1,5 @@
+name: "Build and publish GitHub Pages"
+description: "Build with Hugo and publish to gh-pages"
+runs:
+  using: "docker"
+  image: "Dockerfile"
