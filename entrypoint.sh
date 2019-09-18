@@ -13,7 +13,7 @@ git clone --depth 1 -b "${PUBLISH_BRANCH}" "https://x-access-token:${GITHUB_TOKE
 cd "${TMPDIR}"
 git checkout -b "update/${GITHUB_SHA}"
 
-rsync -va --delete --exclude '.gitignore' --exclude '.git' --exclude '.circleci' --exclude 'CNAME' "${GITHUB_WORKSPACE}/${PUBLISH_DIR}" ./
+rsync -va --delete --exclude '.gitignore' --exclude '.git' --exclude 'CNAME' "${GITHUB_WORKSPACE}/${PUBLISH_DIR}/" ./
 git add -A
 git commit -m "GitHub Action Update ${GITHUB_SHA}" --allow-empty
 hub pull-request -p -b "${PUBLISH_BRANCH}" --no-edit
