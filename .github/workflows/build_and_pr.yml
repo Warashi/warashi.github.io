@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: "checkout"
         uses: actions/checkout@master
+      - name: "submodule update"
+        run: git submodule update --init --recursive
       - name: "Build and make PR"
         uses: Warashi/warashi.github.io@action
         env:
