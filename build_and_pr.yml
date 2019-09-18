@@ -1,9 +1,10 @@
+name: "Build and PR"
 on:
   push:
     branches:
       - source
 jobs:
-  build_and_publish:
+  build_and_pr:
     name: "Build and make PR"
     runs-on: ubuntu-latest
     steps:
