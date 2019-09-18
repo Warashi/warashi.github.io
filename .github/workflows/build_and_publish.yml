@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - source
+jobs:
+  build_and_publish:
+    name: "Build and make PR"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@master
+      - name: "Build and make PR"
+        uses: Warashi/warashi.github.io@action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
